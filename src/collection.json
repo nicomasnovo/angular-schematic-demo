@@ -6,7 +6,7 @@
       "factory": "./my-component/index#myComponent",
       "schema": "./my-component/schema.json"
     },
-    "nico": {
+    "custom": {
       "description": "A blank schematic.",
       "factory": "./custom/index#custom",
       "schema": "./custom/schema.json"

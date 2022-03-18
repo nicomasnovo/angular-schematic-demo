@@ -1,6 +1,6 @@
 {
     "$schema": "http://json-schema.org/schema",
-    "$id": "SchematicsMyComponent",
+    "$id": "CustomMyComponent",
     "title": "My Component Schema",
     "type": "object",
     "properties": {
