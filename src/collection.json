@@ -8,8 +8,8 @@
     },
     "nico": {
       "description": "A blank schematic.",
-      "factory": "./nico/index#nico",
-      "schema": "./nico/schema.json"
+      "factory": "./custom/index#custom",
+      "schema": "./custom/schema.json"
     }
   }
 }
