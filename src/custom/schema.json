@@ -15,7 +15,7 @@
     },
     "path":{
       "type":"string",
-      "default": "src/app/custom",
+      "default": "src/app/data/store/settings/",
       "description": "Path to create all templates",
       "x-prompt": "Select a path to create your feature"
     }

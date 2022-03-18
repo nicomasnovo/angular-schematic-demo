@@ -2,19 +2,17 @@ import { Action, createReducer, on } from '@ngrx/store';
 
 import { Cursor } from 'app/modules/shared/models';
 import { Branch } from 'app/modules/system/modules/merchant/models';
-import { branchesListActions } from '../actions/branches-list.actions';
+import { branchesListActions } from '../actions/<%=dasherize(name)%>.actions';
 
 export interface State {
   error: any;
   loading: boolean;
-  branches: Branch[];
   cursor: Cursor;
 }
 
 export const initialState: State = {
   error: null,
   loading: false,
-  branches: [],
   cursor: null,
 };
 

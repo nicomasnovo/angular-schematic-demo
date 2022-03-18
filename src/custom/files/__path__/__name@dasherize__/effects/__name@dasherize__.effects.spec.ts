@@ -4,10 +4,10 @@ import { provideMockActions } from '@ngrx/effects/testing';
 import { of } from 'rxjs';
 import { Actions } from '@ngrx/effects';
 import { map } from 'rxjs/operators';
-import { BranchesListEffects } from './branches-list.effects';
+import { BranchesListEffects } from './<%=dasherize(name)%>.effects';
 import { BranchesRepository } from 'app/data/repository/branches/branches.repository';
 import { branchesRepositoryFactory } from 'app/data/repository/branches/branches.repository.factory';
-import { branchesListActions } from '../actions/branches-list.actions';
+import { branchesListActions } from '../actions/<%=dasherize(name)%>.actions';
 
 describe('BranchesListEffects', () => {
   let effects: BranchesListEffects;

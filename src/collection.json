@@ -9,7 +9,8 @@
     "custom": {
       "description": "A blank schematic.",
       "factory": "./custom/index#custom",
-      "schema": "./custom/schema.json"
+      "schema": "./custom/schema.json",
+      "aliases": ["custom-alias"]
     }
   }
 }

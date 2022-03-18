@@ -1,3 +1,12 @@
+# VARIABLES SCHEMATICS
+
+<%var%>
+modifiers methods:
+dasherize(var)
+camelize(var)
+decamelize(var)
+classify(var)
+
 # DEFAULT GENERATED SCHEMATICS DOCS
 
 # Getting Started With Schematics ()
