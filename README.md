@@ -1,11 +1,24 @@
+# RUN LOCALLY
+
+```bash
+npm run build
+npm link /path/to/project/folder
+```
+
+Go to your Angular project and run
+`ng g mach-schematic:store`
+
+and follow the prompt
+
 # VARIABLES SCHEMATICS
 
 <%var%>
-modifiers methods:
-dasherize(var)
-camelize(var)
-decamelize(var)
-classify(var)
+format:
+
+- dasherize(var)
+- classify(var)
+- camelize(var)
+- decamelize(var)
 
 # DEFAULT GENERATED SCHEMATICS DOCS
 

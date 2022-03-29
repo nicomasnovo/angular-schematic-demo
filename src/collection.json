@@ -1,16 +1,11 @@
 {
   "$schema": "../node_modules/@angular-devkit/schematics/collection-schema.json",
   "schematics": {
-    "my-component": {
+    "store": {
       "description": "A blank schematic.",
-      "factory": "./my-component/index#myComponent",
-      "schema": "./my-component/schema.json"
-    },
-    "custom": {
-      "description": "A blank schematic.",
-      "factory": "./custom/index#custom",
-      "schema": "./custom/schema.json",
-      "aliases": ["custom-alias"]
+      "factory": "./store/index#store",
+      "schema": "./store/schema.json",
+      "aliases": ["store-alias"]
     }
   }
 }

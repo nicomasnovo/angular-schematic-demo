@@ -1,7 +1,7 @@
 import { SchematicTestRunner, UnitTestTree } from '@angular-devkit/schematics/testing';
 import * as path from 'path';
 
-describe('custom', () => {
+describe('store', () => {
   const schematicRunner = new SchematicTestRunner(
     'schematics',
     path.join(__dirname, './../collection.json'),
@@ -29,7 +29,7 @@ describe('custom', () => {
   });
 
   it('works', (done) => {
-    schematicRunner.runSchematicAsync('custom', schemaOptions, appTree).toPromise().then(tree => {
+    schematicRunner.runSchematicAsync('store', schemaOptions, appTree).toPromise().then(tree => {
       const appComponent = tree.readContent(`/projects/schematest/src/app/${schemaOptions.name}.component.ts`); 
       
       expect(appComponent).toContain(`name = '${schemaOptions.name}'`); 
