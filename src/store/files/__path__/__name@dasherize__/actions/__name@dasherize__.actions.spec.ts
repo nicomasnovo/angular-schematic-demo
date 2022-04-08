@@ -71,14 +71,14 @@ describe('<%=classify(name)%> Actions', () => {
     });
   });
 
-  it('should create a createPaymentTemplate action', () => {
+  it('should create a create<%=classify(name)%> action', () => {
     const paymentTemplate = mockPaymentTemplate;
-    const action = getPaymentTemplateByIdSuccess({
+    const action = get<%=classify(name)%>ByIdSuccess({
       paymentTemplate,
     });
     expect(action).toEqual({
       paymentTemplate,
-      type: '[PaymentTemplate] Get PaymentTemplate by ID SUCCESS',
+      type: '[<%=classify(name)%>] Get <%=classify(name)%> by ID SUCCESS',
     });
   });
 
@@ -86,15 +86,15 @@ describe('<%=classify(name)%> Actions', () => {
     const action = getPaymentTemplateByIdError({ error: null });
     expect(action).toEqual({
       error: null,
-      type: '[PaymentTemplate] Get PaymentTemplate by ID ERROR',
+      type: '[<%=classify(name)%>] Get <%=classify(name)%> by ID ERROR',
     });
   });
-  it('should create a createPaymentTemplate action', () => {
+  it('should create a create<%=classify(name)%> action', () => {
     const id = 'f144ac4e-911a-4314-b97b-2a01a3bac3a2';
-    const action = getPaymentTemplateById({ id });
+    const action = get<%=classify(name)%>ById({ id });
     expect(action).toEqual({
       id,
-      type: '[PaymentTemplate] Get PaymentTemplate by ID',
+      type: '[<%=classify(name)%>] Get <%=classify(name)%> by ID',
     });
   });
 });
