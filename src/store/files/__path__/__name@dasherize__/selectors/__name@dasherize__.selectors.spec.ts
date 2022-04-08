@@ -1,4 +1,4 @@
-import { mockPaymentTemplateState } from 'app/modules/system/modules/payments/models/payment-template/payment-template.mocks';
+import { mockPaymentTemplateState } from 'app/modules/system/modules/payments/models/payment-template/<%=dasherize(name)%>.mocks';
 import * as <%=classify(name)%>Feature from '../<%=dasherize(name)%>.feature';
 import {<%=camelize(name)%>Selectors } from './<%=dasherize(name)%>.selectors';
 
@@ -9,31 +9,31 @@ describe('BranchesListSelectors', () => {
 
   test('getCursor', () => {
     expect(<%=camelize(name)%>Selectors.get<%=classify(name)%>ListCursor(state)).toBe(
-      state['payment-template'].paymentTemplate.cursor,
+      state['<%=dasherize(name)%>'].<%=camelize(name)%>.cursor,
     );
   });
 
   test('getError', () => {
     expect(<%=camelize(name)%>Selectors.get<%=classify(name)%>ListError(state)).toBe(
-      state['payment-template'].paymentTemplate.error,
+      state['<%=dasherize(name)%>'].<%=camelize(name)%>.error,
     );
   });
 
   test('getLoading', () => {
     expect(<%=camelize(name)%>Selectors.get<%=classify(name)%>ListLoading(state)).toBe(
-      state['payment-template'].paymentTemplate.loading,
+      state['<%=dasherize(name)%>'].<%=camelize(name)%>.loading,
     );
   });
 
   test('get<%=classify(name)%>List', () => {
     expect(<%=camelize(name)%>Selectors.get<%=classify(name)%>List(state)).toBe(
-      state['payment-template'].paymentTemplate.list,
+      state['<%=dasherize(name)%>'].<%=camelize(name)%>.list,
     );
   });
 
   test('get<%=classify(name)%>SelectedId', () => {
     expect(<%=camelize(name)%>Selectors.get<%=classify(name)%>SelectedId(state)).toBe(
-      state['payment-template'].paymentTemplate.selected,
+      state['<%=dasherize(name)%>'].<%=camelize(name)%>.selected,
     );
   });
 });

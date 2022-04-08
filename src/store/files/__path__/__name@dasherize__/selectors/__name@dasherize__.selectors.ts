@@ -6,23 +6,23 @@ export const paymentTemplateFeatureSelector =
 
 export const <%=camelize(name)%>Selectors = {
   get<%=classify(name)%>SelectedId: createSelector(
-    paymentTemplateFeatureSelector,
-    state => state.paymentTemplate.selected,
+    <%=camelize(name)%>FeatureSelector,
+    state => state.<%=camelize(name)%>.selected,
   ),
   get<%=classify(name)%>List: createSelector(
-    paymentTemplateFeatureSelector,
-    state => state.paymentTemplate.list,
+    <%=camelize(name)%>FeatureSelector,
+    state => state.<%=camelize(name)%>.list,
   ),
   get<%=classify(name)%>ListLoading: createSelector(
-    paymentTemplateFeatureSelector,
-    state => state.paymentTemplate.loading,
+    <%=camelize(name)%>FeatureSelector,
+    state => state.<%=camelize(name)%>.loading,
   ),
   get<%=classify(name)%>ListCursor: createSelector(
-    paymentTemplateFeatureSelector,
-    state => state.paymentTemplate.cursor,
+    <%=camelize(name)%>FeatureSelector,
+    state => state.<%=camelize(name)%>.cursor,
   ),
   get<%=classify(name)%>ListError: createSelector(
-    paymentTemplateFeatureSelector,
-    state => state.paymentTemplate.error,
+    <%=camelize(name)%>FeatureSelector,
+    state => state.<%=camelize(name)%>.error,
   ),
 };

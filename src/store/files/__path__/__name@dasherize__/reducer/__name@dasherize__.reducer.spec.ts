@@ -1,10 +1,6 @@
 import * as <%=classify(name)%>Actions from '../actions/<%=dasherize(name)%>.actions';
-import { <%=classify(name)%> } from '@payments/models';
 import { reducer, State, initialState } from './<%=dasherize(name)%>.reducer';
-import {
-  mock<%=classify(name)%>,
-  mock<%=classify(name)%>t,
-} from 'app/modules/system/modules/payments/models/payment-template/payment-template.mocks';
+
 import { mockApiError } from 'app/shared/mocks/api-error.mocks';
 
 describe('PaymentTemplateReducer', () => {
@@ -70,6 +66,7 @@ describe('PaymentTemplateReducer', () => {
       selected: null,
       cursor: mock<%=classify(name)%>List.cursor,
       loading: false,
+      list: mock<%=classify(name)%>eList.<%=camelize(name)%>List,
       list: mock<%=classify(name)%>eList.<%=camelize(name)%>List,
     };
     expect(reducer(state, action)).toEqual(expectedState);
