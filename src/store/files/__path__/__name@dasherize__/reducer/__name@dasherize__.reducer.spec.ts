@@ -3,7 +3,7 @@ import { reducer, State, initialState } from './<%=dasherize(name)%>.reducer';
 
 import { mockApiError } from 'app/shared/mocks/api-error.mocks';
 
-describe('PaymentTemplateReducer', () => {
+describe('<%=classify(name)%>Reducer', () => {
   let state: State;
 
   beforeEach(() => {
@@ -30,7 +30,7 @@ describe('PaymentTemplateReducer', () => {
     expect(reducer(state, action)).toEqual(expectedState);
   });
 
-  it('should add new instance on on CreatePaymentTemplateActions.createPaymentTemplateSuccess', () => {
+  it('should add new instance on on Create<%=classify(name)%>Actions.create<%=classify(name)%>Success', () => {
     const <%=camelize(name)%>: <%=classify(name)%> = mock<%=classify(name)%>;
     const action = <%=classify(name)%>Actions.create<%=classify(name)%>Success({
       <%=camelize(name)%>,
@@ -57,7 +57,7 @@ describe('PaymentTemplateReducer', () => {
     expect(reducer(state, action)).toEqual(expectedState);
   });
 
-  it('should modify state on PaymentTemplates.getPaymentTemplatesSuccess', () => {
+  it('should modify state on <%=classify(name)%>s.get<%=classify(name)%>sSuccess', () => {
     const action = <%=classify(name)%>Actions.get<%=classify(name)%>ListSuccess({
       <%=camelize(name)%>Collection: mock<%=classify(name)%>List,
     });

@@ -1,4 +1,4 @@
-import { mockPaymentTemplateState } from 'app/modules/system/modules/payments/models/payment-template/<%=dasherize(name)%>.mocks';
+import { mock<%=classify(name)%>State } from 'app/modules/system/modules/payments/models/payment-template/<%=dasherize(name)%>.mocks';
 import * as <%=classify(name)%>Feature from '../<%=dasherize(name)%>.feature';
 import {<%=camelize(name)%>Selectors } from './<%=dasherize(name)%>.selectors';
 

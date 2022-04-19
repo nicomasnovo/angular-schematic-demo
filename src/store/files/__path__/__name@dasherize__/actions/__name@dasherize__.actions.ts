@@ -10,7 +10,7 @@ export const get<%=classify(name)%>List = createAction(
 );
 export const get<%=classify(name)%>ListSuccess = createAction(
   '[<%=classify(name)%> List] Get <%=classify(name)%>List SUCCESS',
-  props<{ paymentTemplateCollection: <%=classify(name)%>Collection }>(),
+  props<{ <%=camelize(name)%>Collection: <%=classify(name)%>Collection }>(),
 );
 export const get<%=classify(name)%>ListFailure = createAction(
   '[<%=classify(name)%> List] Get <%=classify(name)%>List ERROR',

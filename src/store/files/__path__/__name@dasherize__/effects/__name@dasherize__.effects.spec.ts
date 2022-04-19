@@ -5,11 +5,11 @@ import { provideMockActions } from '@ngrx/effects/testing';
 import { cold, hot } from 'jest-marbles';
 import { map, of, ReplaySubject } from 'rxjs';
 
-import * as PaymentTemplateActions from '../actions/<%=dasherize(name)%>.actions';
+import * as <%=classify(name)%>Actions from '../actions/<%=dasherize(name)%>.actions';
 
 import {
-  mockPaymentTemplate,
-  mockPaymentTemplatePayload,
+  mock<%=classify(name)%>,
+  mock<%=classify(name)%>Payload,
 } from '@payments/models/<%=dasherize(name)%>/<%=dasherize(name)%>.mocks';
 
 import { <%=classify(name)%>Repository } from '@data/repository/<%=dasherize(name)%>/<%=dasherize(name)%>.repository';
@@ -65,10 +65,10 @@ describe('<%=classify(name)%>Effects', () => {
 
   it('should create<%=classify(name)%> action activate create<%=classify(name)%>$ and create<%=classify(name)%> effects', () => {
     const action = <%=classify(name)%>Actions.create<%=classify(name)%>({
-      templatePayload: mockPaymentTemplatePayload,
+      templatePayload: mock<%=classify(name)%>Payload,
     });
     const completition = <%=classify(name)%>Actions.create<%=classify(name)%>Success({
-      <%=camelize(name)%>: mockPaymentTemplate,
+      <%=camelize(name)%>: mock<%=classify(name)%>,
     });
 
     actions = hot('--a-', { a: action });
@@ -127,17 +127,17 @@ describe('<%=classify(name)%>Effects', () => {
     actions = hot('--a-', { a: action });
     const expected = cold('--b', { b: completition });
 
-    expect(effects.getPaymentTemplateById$).toBeObservable(expected);
+    expect(effects.get<%=classify(name)%>ById$).toBeObservable(expected);
   });
 
   it('should get<%=classify(name)%>ById action activate get<%=classify(name)%>ById$ and get<%=classify(name)%>ByIdError effect', done => {
     const payload = { id: 'id_test_error' };
     <%=camelize(name)%>Service.get<%=classify(name)%> = () => failureObservable;
-    const currentAction = new Actions(of(PaymentTemplateActions.get<%=classify(name)%>ById(payload)));
+    const currentAction = new Actions(of(<%=classify(name)%>Actions.get<%=classify(name)%>ById(payload)));
     const effect = instanceEffects(currentAction);
-    const { getPaymentTemplateById$ } = effect;
+    const { get<%=classify(name)%>ById$ } = effect;
 
-    getPaymentTemplateById$.subscribe(({ type }) => {
+    get<%=classify(name)%>ById$.subscribe(({ type }) => {
       expect(type).toEqual(<%=classify(name)%>Actions.get<%=classify(name)%>ByIdError.type);
       done();
     });
@@ -154,7 +154,7 @@ describe('<%=classify(name)%>Effects', () => {
     });
   });
 
-  it('should getPaymentTemplates action activate getPaymentTemplates$ and getPaymentTemplatesSuccess effect', done => {
+  it('should get<%=classify(name)%>s action activate get<%=classify(name)%>s$ and get<%=classify(name)%>sSuccess effect', done => {
     const currentAction = new Actions(
       of(
         <%=classify(name)%>Actions.get<%=classify(name)%>List({
@@ -171,7 +171,7 @@ describe('<%=classify(name)%>Effects', () => {
     });
   });
 
-  it('should getPaymentTemplates action activate getPaymentTemplates$ and getPaymentTemplatesFailure effects', done => {
+  it('should get<%=classify(name)%>s action activate get<%=classify(name)%>s$ and get<%=classify(name)%>sFailure effects', done => {
     <%=camelize(name)%>Service.get<%=classify(name)%>eList = () => failureObservable;
     const currentAction = new Actions(
       of(

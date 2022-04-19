@@ -2,8 +2,8 @@ import { Action, combineReducers } from '@ngrx/store';
 
 import * as from<%=classify(name)%> from './reducers/<%=dasherize(name)%>.reducer';
 
-export interface PaymentTemplateState {
-  paymentTemplate: from<%=classify(name)%>.State;
+export interface <%=classify(name)%>State {
+  <%=camelize(name)%>: from<%=classify(name)%>.State;
 }
 
 export interface State {

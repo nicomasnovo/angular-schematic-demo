@@ -5,7 +5,8 @@ import {
 } from '@system/modules/payments/models/<%=dasherize(name)%>/<%=dasherize(name)%>.mocks';
 import { mockPaginationRequestParameters } from 'app/modules/shared/models/mocks';
 import {
-  get<%=classify(name)%>List,
+  get<import { classify } from '@angular-devkit/core/src/utils/strings'
+%=classify(name)%>List,
   get<%=classify(name)%>ListSuccess,
   get<%=classify(name)%>ListFailure,
   get<%=classify(name)%>ByIdSuccess,
@@ -72,18 +73,18 @@ describe('<%=classify(name)%> Actions', () => {
   });
 
   it('should create a create<%=classify(name)%> action', () => {
-    const paymentTemplate = mockPaymentTemplate;
+    const <%=camelize(name)%> = mock<%=classify(name)%>;
     const action = get<%=classify(name)%>ByIdSuccess({
-      paymentTemplate,
+      <%=camelize(name)%>,
     });
     expect(action).toEqual({
-      paymentTemplate,
+      <%=camelize(name)%>,
       type: '[<%=classify(name)%>] Get <%=classify(name)%> by ID SUCCESS',
     });
   });
 
-  it('should create a getPaymentTemplateByIdError action', () => {
-    const action = getPaymentTemplateByIdError({ error: null });
+  it('should create a get<%=classify(name)%>ByIdError action', () => {
+    const action = get<%=classify(name)%>ByIdError({ error: null });
     expect(action).toEqual({
       error: null,
       type: '[<%=classify(name)%>] Get <%=classify(name)%> by ID ERROR',

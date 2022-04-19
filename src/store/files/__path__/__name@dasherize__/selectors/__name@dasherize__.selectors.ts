@@ -1,7 +1,7 @@
 import { createFeatureSelector, createSelector } from '@ngrx/store';
 import { <%=classify(name)%>State } from '../<%=dasherize(name)%>.feature';
 
-export const paymentTemplateFeatureSelector =
+export const <%=camelize(name)%>FeatureSelector =
   createFeatureSelector<<%=classify(name)%>State>('<%=dasherize(name)%>');
 
 export const <%=camelize(name)%>Selectors = {

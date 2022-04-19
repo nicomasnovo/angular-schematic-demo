@@ -6,7 +6,7 @@ import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { of } from 'rxjs';
 import { catchError, concatMap, map, tap } from 'rxjs/operators';
 
-import * as PaymentTemplateActions from '../actions/<%=dasherize(name)%>.actions';
+import * as <%=classify(name)%>Actions from '../actions/<%=dasherize(name)%>.actions';
 import { <%=classify(name)%> } from '@payments/models';
 import { <%=classify(name)%>Repository } from 'app/data/repository/<%=dasherize(name)%>/<%=dasherize(name)%>.repository';
 
@@ -71,7 +71,7 @@ export class <%=classify(name)%>Effects {
         this.<%=camelize(name)%>Service.get<%=classify(name)%>(id).pipe(
           map((response: <%=classify(name)%>) =>
             <%=classify(name)%>Actions.get<%=classify(name)%>ByIdSuccess({
-              paymentTemplate: response,
+              <%=camelize(name)%>: response,
             }),
           ),
           catchError(error => of(<%=classify(name)%>Actions.get<%=classify(name)%>ByIdError(error))),
