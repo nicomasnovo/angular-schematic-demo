@@ -1,86 +1,41 @@
-import * as <%=classify(name)%>Actions from '../actions/<%=dasherize(name)%>.actions';
-import { reducer, State, initialState } from './<%=dasherize(name)%>.reducer';
-
-import { mockApiError } from 'app/shared/mocks/api-error.mocks';
+import { <%=camelize(name)%>Actions } from '../actions/<%=dasherize(name)%>.actions';
+import { <%=camelize(name)%>InitialState, <%=camelize(name)%>Reducer } from './<%=dasherize(name)%>.reducer';
 
 describe('<%=classify(name)%>Reducer', () => {
-  let state: State;
-
-  beforeEach(() => {
-    state = { error: null, loading: false, selected: null, list: [], cursor: null };
-  });
-
   it('should return the initial state', () => {
     const action = { type: 'dummy_action' };
-    expect(reducer(state, action)).toEqual(initialState);
+    expect(<%=camelize(name)%>Reducer(undefined, action)).toEqual(<%=camelize(name)%>InitialState);
   });
 
-  it('should set loading in true on <%=classify(name)%>Actions.create<%=classify(name)%>', () => {
-    const action = <%=classify(name)%>Actions.create<%=classify(name)%>({
-      templatePayload: {
-        title: '',
-        amount: 0,
-        isMessageEditable: false,
-        isAmountEditable: false,
-        message: '',
-        terminalId: '502b3cbd-6321-4f0f-80dc-988d73ac4c4a',
-      },
-    });
-    const expectedState = { error: null, loading: true, selected: null, list: [], cursor: null };
-    expect(reducer(state, action)).toEqual(expectedState);
-  });
-
-  it('should add new instance on on Create<%=classify(name)%>Actions.create<%=classify(name)%>Success', () => {
-    const <%=camelize(name)%>: <%=classify(name)%> = mock<%=classify(name)%>;
-    const action = <%=classify(name)%>Actions.create<%=classify(name)%>Success({
-      <%=camelize(name)%>,
-    });
+  it.each(['<%=camelize(name)%>'])('should set loading to true on %s', actionName => {
+    const action = <%=camelize(name)%>Actions[actionName]();
     const expectedState = {
-      loading: false,
-      list: [],
-      error: null,
-      selected: mock<%=classify(name)%>,
-      cursor: null,
+      ...<%=camelize(name)%>InitialState,
+      loading: true,
     };
-    expect(reducer(state, action)).toEqual(expectedState);
+    expect(<%=camelize(name)%>Reducer(undefined, action)).toEqual(expectedState);
   });
 
-  it('should not modify state on Create<%=classify(name)%>Actions.create<%=classify(name)%>Error', () => {
-    const action = <%=classify(name)%>Actions.create<%=classify(name)%>Error({ error: mockApiError });
-    const expectedState = {
-      error: mockApiError,
-      loading: false,
-      selected: null,
-      list: [],
-      cursor: null,
-    };
-    expect(reducer(state, action)).toEqual(expectedState);
-  });
+  it.each(['<%=camelize(name)%>Failure'])(
+    'should set error to not null and loading to false on %s',
+    actionName => {
+      const mockError = { message: 'mockMessage' };
+      const action = <%=camelize(name)%>Actions[actionName]({ error: mockError });
+      const expectedState = {
+        ...<%=camelize(name)%>InitialState,
+        error: mockError,
+        loading: false,
+      };
+      expect(<%=camelize(name)%>Reducer(undefined, action)).toEqual(expectedState);
+    },
+  );
 
-  it('should modify state on <%=classify(name)%>s.get<%=classify(name)%>sSuccess', () => {
-    const action = <%=classify(name)%>Actions.get<%=classify(name)%>ListSuccess({
-      <%=camelize(name)%>Collection: mock<%=classify(name)%>List,
-    });
+  it('should set on <%=camelize(name)%>Success', () => {
+    const action = <%=camelize(name)%>Actions.<%=camelize(name)%>Success();
     const expectedState = {
-      error: null,
-      selected: null,
-      cursor: mock<%=classify(name)%>List.cursor,
+      ...<%=camelize(name)%>InitialState,
       loading: false,
-      list: mock<%=classify(name)%>eList.<%=camelize(name)%>List,
-      list: mock<%=classify(name)%>eList.<%=camelize(name)%>List,
     };
-    expect(reducer(state, action)).toEqual(expectedState);
-  });
-
-  it('should not modify state on <%=classify(name)%>.get<%=classify(name)%>Failure', () => {
-    const action = <%=classify(name)%>Actions.get<%=classify(name)%>ListFailure({ error: mockApiError });
-    const expectedState = {
-      error: mockApiError,
-      loading: false,
-      selected: null,
-      list: [],
-      cursor: null,
-    };
-    expect(reducer(state, action)).toEqual(expectedState);
+    expect(<%=camelize(name)%>Reducer(undefined, action)).toEqual(expectedState);
   });
 });
