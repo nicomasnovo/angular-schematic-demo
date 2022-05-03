@@ -5,7 +5,7 @@ import { map, of } from 'rxjs';
 import { <%=classify(name)%>Effects } from './<%=dasherize(name)%>.effects';
 import { Actions } from '@ngrx/effects';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
-import { %=camelize(name)%>Actions } from '../actions/<%=dasherize(name)%>.actions';
+import { <%=camelize(name)%>Actions } from '../actions/<%=dasherize(name)%>.actions';
 
 describe('<%=classify(name)%>Effects', () => {
   let effects: <%=classify(name)%>Effects;
@@ -41,7 +41,7 @@ describe('<%=classify(name)%>Effects', () => {
     const { <%=camelize(name)%>$ } = effect;
 
     <%=camelize(name)%>$.subscribe(({ type }) => {
-      expect(type).toEqual(%=camelize(name)%>Actions.<%=camelize(name)%>Success.type);
+      expect(type).toEqual(<%=camelize(name)%>Actions.<%=camelize(name)%>Success.type);
       done();
     });
   });
@@ -55,7 +55,7 @@ describe('<%=classify(name)%>Effects', () => {
     const { <%=camelize(name)%>$ } = effect;
 
     <%=camelize(name)%>$.subscribe(({ type }) => {
-      expect(type).toEqual(%=camelize(name)%>Actions.<%=camelize(name)%>Failure.type);
+      expect(type).toEqual(<%=camelize(name)%>Actions.<%=camelize(name)%>Failure.type);
       done();
     });
   });

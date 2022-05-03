@@ -31,7 +31,7 @@ const reducer = createReducer(
   }),
 );
 
-export function <%=camelize(name)%Reducer(state: <%=camelize(name)%>State | undefined, action: Action) {
+export function <%=camelize(name)%>Reducer(state: <%=camelize(name)%>State | undefined, action: Action) {
   return reducer(state, action);
 }
 

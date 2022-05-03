@@ -17,7 +17,7 @@ describe('<%=classify(name)%>Reducer', () => {
   });
 
   it.each(['<%=camelize(name)%>Failure'])(
-    'should set error to not null and loading to false on %s',
+    'should set error to not null and loading to false on',
     actionName => {
       const mockError = { message: 'mockMessage' };
       const action = <%=camelize(name)%>Actions[actionName]({ error: mockError });
