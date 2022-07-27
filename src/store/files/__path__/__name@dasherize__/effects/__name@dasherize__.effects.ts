@@ -6,7 +6,7 @@ import { catchError, concatMap, map, tap } from 'rxjs/operators';
 import { <%=camelize(name)%>Actions } from '../actions/<%=dasherize(name)%>.actions';
 
 @Injectable()
-export class <%=camelize(name)%>Effects {
+export class <%=classify(name)%>Effects {
   constructor(private actions$: Actions, private repository: FeatureRepository) {}
 
   <%=camelize(name)%>$ = createEffect(() =>
