@@ -1,16 +1,17 @@
-import { createFeatureSelector, createSelector } from '@ngrx/store';
-import { <%=classify(name)%>State } from '../<%=dasherize(name)%>.feature';
+import { createSelector } from '@ngrx/store';
+import { <%=camelize(name)%>FeatureSelector } from '../<%=dasherize(name)%>.feature';
 
-export const <%=camelize(name)%>FeatureSelector =
-  createFeatureSelector<<%=classify(name)%>State>('<%=dasherize(name)%>');
+export const <%=camelize(name)%>StateSelector = createSelector(
+  <%=camelize(name)%>FeatureSelector%>,
+  state => state['<%=dasherize(name)%>'];
 
 export const <%=camelize(name)%>Selectors = {
   get<%=classify(name)%>Loading: createSelector(
-    <%=camelize(name)%>FeatureSelector,
-    state => state.<%=camelize(name)%>.loading,
+    <%=camelize(name)%>StateSelector,
+    state => state.loading,
   ),
   get<%=classify(name)%>Error: createSelector(
-    <%=camelize(name)%>FeatureSelector,
-    state => state.<%=camelize(name)%>.error,
+    <%=camelize(name)%>StateSelector,
+    state => state.error,
   ),
 };
