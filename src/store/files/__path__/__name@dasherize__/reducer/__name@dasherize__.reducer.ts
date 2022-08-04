@@ -8,7 +8,7 @@ export interface <%=classify(name)%>State {
 }
 
 export const <%=camelize(name)%>InitialState: <%=classify(name)%>State = {
-  error: null,
+  error: ApiError,
   loading: false,
 };
 

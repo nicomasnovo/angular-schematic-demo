@@ -18,10 +18,10 @@ describe('<%=classify(name)%> Actions', () => {
   });
 
   it('should create a <%=camelize(name)%>Failure action', () => {
-    const action = <%=camelize(name)%>Actions. <%=camelize(name)%>Failure({ error: null });
+    const action = <%=camelize(name)%>Actions. <%=camelize(name)%>Failure({ error: mockApiError });
     expect(action).toEqual({
       type: '[<%=classify(name)%>] <%=decamelize(name)%> FAILURE',
-      error: null,
+      error: mockApiError,
     });
   });
 });
