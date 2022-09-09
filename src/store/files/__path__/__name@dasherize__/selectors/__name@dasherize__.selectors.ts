@@ -2,7 +2,7 @@ import { createSelector } from '@ngrx/store';
 import { <%=camelize(name)%>FeatureSelector } from '../<%=dasherize(name)%>.feature';
 
 export const <%=camelize(name)%>StateSelector = createSelector(
-  <%=camelize(name)FeatureSelector%>,
+  <%=camelize(name)%>FeatureSelector,
   state => state['<%=dasherize(name)%>'],
   );  
 
