@@ -1,3 +1,5 @@
+# This is an example of an angular schematics created for educational purposes only
+
 # RUN LOCALLY
 
 ```bash
